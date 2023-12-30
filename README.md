@@ -1,4 +1,4 @@
-# 🏝️ IMAGE CLASSIFICATION USING PYTORCH 🔥️ - MNIST DATASET
+# ✈ IMAGE CLASSIFICATION USING PYTORCH 🔥️ - MNIST DATASET
 
 **About MNIST**
 
@@ -9,7 +9,8 @@ The MNIST database (Modified National Institute of Standards and Technology data
 The Fashion MNIST dataset is a dataset of Zalando's article images, consisting of a training set of 60,000 examples and a test set of 10,000 examples. Each example is a 28x28 grayscale image, associated with a label from 10 classes. These classes represent different articles of clothing, including T-shirts, trousers, pullovers, dresses, coats, sandals, shirts, sneakers, bags, and ankle boots.
 
 ## ✍️ Prerequisites
-- You should have anaconda package already installed on your host PC. If not, visit the [Anaconda official site](https://www.anaconda.com/download) to download and install the latest package.
+
+You should have anaconda package already installed on your host PC. If not, visit the [Anaconda official site](https://www.anaconda.com/download) to download and install the latest package.
 
 ## 👨‍🔧️ Environment Setup
 Clone this repository by running the following commands on the terminal,
