@@ -1,5 +1,4 @@
 import torch
-from progress.bar import Bar
 from loguru import logger
 import sys
 import time
@@ -125,10 +124,9 @@ def train(model, device, train_loader, criterion, optimizer, scheduler, model_na
            
            # Calculate the accuracy as the ratio of correct predictions to total predictions
            acc = correct / total
-
-           logger.info(f"Training - Epoch {epoch} {progress_bar(batch_idx + 1, len(train_loader))}    Loss: {(running_loss / (batch_idx + 1)):.4f}   Accuracy: {(acc):.4f}", end="\r")
-
-           break
+           
+           if batch_idx % 100 == 0 or batch_idx == len(train_loader) - 1:
+              logger.info(f"Training - Epoch {epoch} {progress_bar(batch_idx + 1, len(train_loader))}    Loss: {(running_loss / (batch_idx + 1)):.4f}   Accuracy: {(acc):.4f}", end="\r")
            
        # Save model if it has achieved the best accuracy so far
        if save_model:
@@ -186,8 +184,6 @@ def test(model, device, test_loader, criterion):
            correct += pred.eq(target.view_as(pred)).sum().item()
            
            logger.info(f"Testing - {progress_bar(batch_idx + 1, len(test_loader))}    Accuracy: {(correct/total):.2f}")
-
-           break
 
    # Calculate the average loss
    test_loss /= len(test_loader.dataset)
